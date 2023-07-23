@@ -1,0 +1,96 @@
+.arrow-up {
+    z-index: 99;
+    @include flexCenter;
+    text-align: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(0,0,0,.7);
+    @include mobile-version {
+        bottom: .5rem;
+        right: .5rem;
+    }
+    div {
+        color: white;
+        &::before {
+            @include icon('\f077', 2.4rem);
+        }
+    }
+}
+
+.button-container {
+    z-index: 99;
+    position: fixed;
+    right: .5em;
+    top: .5em;
+    display: flex;
+    align-items: center;
+    color: $fifth-color;
+    @include adapt-size(2.5vw);
+    &::before {
+        @include icon('\f185', 1.5em);
+        @include tablette-version {
+            font-size: 4vw;
+        }
+    }
+    &::after {
+        @include icon('\f186',1.3em);
+        @include tablette-version {
+            font-size: 4vw;
+        }
+    }
+    &.hide {
+        display: none;
+    }
+}
+
+.dark .button-container {
+    color: white;
+}
+
+.switch-button {
+    width: 3em;
+    display: flex;
+    align-items: center;
+    border: solid $fifth-color;
+    background-color: inherit;
+    border-radius: 20px;
+    margin: 0 .1em;
+    &::before {
+        content: '';
+        width: 1em;
+        height: 1em;
+        margin: .12em;
+        border-radius: 50%;
+        background-color: $fifth-color;
+        transition: transform .5s;
+    }
+}
+
+.dark .switch-button {
+    border-color: white;
+    &::before {
+        transform: translateX(1.3em);
+        background-color: #fff;
+    }
+}
+
+.back {
+    z-index: 99;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: .5em;
+    left: .5em;
+    &::before {
+        @include icon('\f3e5',2em);
+        @include tablette-version {
+            font-size: 6vw;
+        }
+    }
+    &.hide {
+        display: none;
+    }
+}
