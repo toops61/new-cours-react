@@ -1,12 +1,14 @@
 type FirstProps = {
-    title:string
+    pseudo:string,
+    persoName:string
 }
 
-export default function FirstComponent({title}:FirstProps) {
+export default function FirstComponent({pseudo,persoName}:FirstProps) {
   return (
     <section className="first-component">
         <h1>premier composant</h1>
-        <div>{title}</div>
+        <p>{pseudo}</p>
+        <p>{persoName}</p>
     </section>
   )
 }
