@@ -2,13 +2,21 @@
     padding: 1em;
 }
 
-.first-component {
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
     background-color: #18cdf6;
-    width: 30vw;
+    width: 20vw;
     @include flexColumn;
     padding: 1em;
     margin: 1em;
     border-radius: 1em;
     border: solid .15em;
     box-shadow: 4px 4px 8px;
+    p {
+        white-space: nowrap;
+    }
 }

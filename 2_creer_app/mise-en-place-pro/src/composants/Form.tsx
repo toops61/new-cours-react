@@ -15,21 +15,21 @@ export default function Form(props:FormProps) {
     const [input, setInput] = useState(new NewPerso('',''));
 
     const handleChange : ((e:ChangeEvent) => void) = e => {
-        const tempObject = {...input};
+        const tempObject: {
+            [key:string]:string
+        } = {};
         const target = e.target as HTMLInputElement;
-        //tempObject[target.name] = target.value;
-        console.log(target.name);
-        
-        //setInput(value);
+        tempObject[target.name] = target.value;
+        setInput({...input,...tempObject});
     }
 
 
     const submitForm : ((e:FormEvent) => void) = e => {
         e.preventDefault();
-        const target0 = (e.target as HTMLInputElement).childNodes[0] as HTMLInputElement;
+        /* const target0 = (e.target as HTMLInputElement).childNodes[0] as HTMLInputElement;
         const target1 = (e.target as HTMLInputElement).childNodes[1] as HTMLInputElement;
-        const newPerso = new NewPerso(target0.value,target1.value)
-        props.getFormData(newPerso);
+        const newPerso = new NewPerso(target0.value,target1.value); */
+        props.getFormData(input);
     }
 
   return (
