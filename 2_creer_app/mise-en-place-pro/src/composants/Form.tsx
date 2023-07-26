@@ -1,8 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
-interface FormProps {
-    getFormData: (data:object) => void;
+interface persoFields {
+    pseudo:string;
+    persoName:string;
 }
+interface FormProps {
+    getFormData: (data:persoFields) => void;
+}
+
 
 export default function Form(props:FormProps) {
     class NewPerso {
