@@ -1,21 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { NewPerso } from "../utils/classes";
+import { dataFields } from "../utils/interfaces";
 
-interface persoFields {
-    pseudo:string;
-    persoName:string;
-}
 interface FormProps {
-    getFormData: (data:persoFields) => void;
+    getFormData: (data:dataFields) => void;
 }
-
 
 export default function Form(props:FormProps) {
-    class NewPerso {
-        constructor (
-          public pseudo:string,
-          public persoName:string
-        ) {}
-    }
 
     const [input, setInput] = useState(new NewPerso('',''));
 

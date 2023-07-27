@@ -23,5 +23,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </HashRouter>
     </Provider>
   </QueryClientProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

@@ -1,0 +1,40 @@
+.Fruity-section {
+    background-color: #ffdf88;
+    margin: 1em 0;
+    border: solid;
+    padding: 1em;
+    h1 {
+     font-size: 2em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+}
+
+.cart-container {
+    background-color: white;
+    border: solid;
+    margin: 1em 0;
+    border-radius: .5em;
+    padding: .5em;
+    ul {
+        min-height: 2em;
+        border-top: solid .1em;
+        border-bottom: solid .1em;
+        margin: .5em;
+    }
+    p {
+        margin-left: 1em;
+    }
+    h4 {
+        margin-left: .5 em;
+        font-size: 1.6em;
+    }
+    span {
+        font-weight: bold;
+    }
+}
+
+.fruity-card {
+
+}

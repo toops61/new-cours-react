@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import FirstComponent from "./composants/FirstComponent";
+
 import Form from "./composants/Form";
 import Cards from "./composants/Cards";
 import { v4 as uuidv4 } from "uuid";
@@ -7,26 +7,15 @@ import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { RootState } from "./redux/store";
 import { updateGeneralParams } from "./redux/generalParamsSlice";
 import { updatePersos } from "./redux/persosSlice";
+import Fruity from "./composants/Fruity-app/Fruity";
+import { dataFields, persoCard } from "./utils/interfaces";
+import { NewCard } from "./utils/classes";
 
 export default function App() {
   const generalParams = useAppSelector((state : RootState) => state.generalParamsSlice);
   const persosArrayRedux = useAppSelector((state : RootState) => state.persosSlice);
-  const dispatch = useAppDispatch();
   
-  interface dataFields {
-    pseudo:string;
-    persoName:string;
-  }
-  interface persoCard extends dataFields {
-    id:string;
-  }
-  class NewCard {
-    constructor (
-      public pseudo:string,
-      public persoName:string,
-      public id:string
-    ) {}
-  }
+  const dispatch = useAppDispatch();
 
   const [persosArray, setPersosArray]: [persoCard[], React.Dispatch<React.SetStateAction<NewCard[]>>] = useState<persoCard[]>([]);
 
@@ -55,9 +44,11 @@ export default function App() {
     <main className="App">
       <div className="container">
         <Form getFormData={getFormData} />
-        <FirstComponent />
         <section className="cards-container">
           {persosArray[0]?.pseudo ? persosArray.map((perso : NewCard) => <Cards pseudo={perso.pseudo} persoName={perso.persoName} key={perso.id} />) : <></>}
+        </section>
+        <section className="Fruity-section">
+          <Fruity />
         </section>
       </div>
     </main>

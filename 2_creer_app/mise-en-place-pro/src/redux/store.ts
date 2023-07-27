@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import generalParamsSlice from "./generalParamsSlice";
 import persosSlice from "./persosSlice";
+import fruitsSlice from "./fruitsSlice";
 
 const store = configureStore({
     reducer: {
         generalParamsSlice,
-        persosSlice
+        persosSlice,
+        fruitsSlice
     }
 });
 
