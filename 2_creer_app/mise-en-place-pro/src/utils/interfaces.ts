@@ -15,3 +15,7 @@ export interface fruitFields {
     price: number;
     id: string;
 }
+
+export interface cartFruitFields extends fruitFields {
+    quantity: number
+}

@@ -10,7 +10,7 @@ export default function Fruity() {
     <>
         <h1>Fruity</h1>
         <p>Pick your fruits</p>
-        <ul>
+        <ul className="cards-list">
             {fruitList.map(fruit => <FruityCard key={fruit.id} fruit={fruit} />)}
         </ul>
         <FruityCart />
