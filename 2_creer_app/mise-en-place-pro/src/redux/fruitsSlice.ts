@@ -17,7 +17,14 @@ const fruitsSlice = createSlice({
             state.push(action.payload);
             return state;
         }
-    }
+    }/* ,
+    extraReducers: builder => {
+        builder
+            .addCase(addOne, (state,action) => {
+                console.log(action);
+                
+            })
+    } */ //Use reducer from other slice https://redux-toolkit.js.org/api/createSlice
 })
 
 export const {updateFruits} = fruitsSlice.actions;

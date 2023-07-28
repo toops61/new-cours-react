@@ -3,6 +3,7 @@ import generalParamsSlice from "./generalParamsSlice";
 import persosSlice from "./persosSlice";
 import fruitsSlice from "./fruitsSlice";
 import cartSlice from "./cartSlice";
+import logger from "redux-logger";
 
 const store = configureStore({
     reducer: {
@@ -10,8 +11,19 @@ const store = configureStore({
         persosSlice,
         fruitsSlice,
         cartSlice
-    }
+    },
+    middleware: getDefaultMiddleware =>
+        getDefaultMiddleware()
+            .concat(logger)
 });
+
+/* function customMiddleware(store) {
+    return function(next) {
+        return function(action){
+            console.log(store);
+        }
+    }
+} */
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;

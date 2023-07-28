@@ -1,6 +1,6 @@
 import { addOne, removeOne } from "../../redux/cartSlice";
-import { useAppDispatch } from "../../redux/hooks"
-import { fruitFields } from "../../utils/interfaces"
+import { useAppDispatch } from "../../redux/hooks";
+import { fruitFields } from "../../utils/interfaces";
 
 type fruitProps = {
     fruit:fruitFields
@@ -11,7 +11,7 @@ export default function FruityCard({fruit}: fruitProps) {
 
     const addFunc = () => dispatch(addOne(fruit));
     const removeFunc = () => dispatch(removeOne(fruit));
-
+    
   return (
     <li className="fruity-card">
         <div className="fruit-image">
