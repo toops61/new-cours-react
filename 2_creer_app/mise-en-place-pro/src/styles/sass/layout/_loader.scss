@@ -1,3 +1,46 @@
+.loader-page {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  @include flexCenter;
+  @media (orientation: portrait) {
+    flex-direction: column;
+  }
+}
+
+.redux-image {
+  width: 10em;
+  height: 10em;
+  @include flexCenter;
+  img {
+    @include imageFit;
+  }
+  animation: rotate-left 3s infinite linear/* , bouncing 0.8s infinite alternate */;
+}
+.ts-image {
+  width: 15em;
+  height: 15em;
+  @include flexCenter;
+  img {
+    @include imageFit;
+  }
+  margin: 3em;
+  animation: appears 1s infinite alternate linear;
+}
+.react-image {
+  width: 10em;
+  height: 10em;
+  @include flexCenter;
+  img {
+    @include imageFit;
+  }
+  animation: rotate-anim 4s infinite linear;
+}
+
 .point-container {
     display: flex;
     .point {

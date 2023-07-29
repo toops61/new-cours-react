@@ -19,3 +19,25 @@ export interface fruitFields {
 export interface cartFruitFields extends fruitFields {
     quantity: number
 }
+
+export interface usersFields {
+    id: string;
+    name: string;
+    username: string;
+    email: string;
+    address: object;
+    phone: string;
+    website: string;
+    geo: object;
+}
+
+export interface fetchFields {
+    loading: boolean;
+    data: usersFields[] | null;
+    error: boolean;
+}
+
+export interface chronoFields {
+    value: number;
+    intervalID: number | null;
+}

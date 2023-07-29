@@ -3,18 +3,22 @@ import generalParamsSlice from "./generalParamsSlice";
 import persosSlice from "./persosSlice";
 import fruitsSlice from "./fruitsSlice";
 import cartSlice from "./cartSlice";
-import logger from "redux-logger";
+import usersSlice from "./usersSlice";
+import chronoSlice from "./chronoSlice";
+//import logger from "redux-logger";
 
 const store = configureStore({
     reducer: {
         generalParamsSlice,
         persosSlice,
         fruitsSlice,
-        cartSlice
-    },
+        cartSlice,
+        usersSlice,
+        chronoSlice
+    }/* ,
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware()
-            .concat(logger)
+            .concat(logger) */
 });
 
 /* function customMiddleware(store) {

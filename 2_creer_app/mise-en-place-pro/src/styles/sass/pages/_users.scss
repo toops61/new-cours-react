@@ -1,0 +1,46 @@
+.users-section {
+    position: relative;
+    background-color: #12d4ea;
+    width: 100%;
+    min-height: 3em;
+    border: solid;
+}
+.users-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5em 0 1em;
+    p {
+        font-size: 1.5em;
+    }
+    li {
+        display: flex;
+        align-items: flex-end;
+        width: 60%;
+        margin: .2em 0;
+    }
+    @include portrait-version {
+        li {
+            width: 95%;
+        }
+        p {
+            font-size: 1.2em;
+        }
+    }
+}
+
+.separation {
+    flex: 1;
+    height: 100%;
+    border-bottom: solid .1em;
+    margin: 0 .5em .2em;
+}
+
+.error-display {
+    background-color: #8d0000;
+    padding: 2em;
+    p {
+        color: white;
+        font-size: 2em;
+    }
+}

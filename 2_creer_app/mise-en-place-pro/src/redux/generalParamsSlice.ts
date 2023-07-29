@@ -2,11 +2,13 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface ParamsState {
     darkMode: boolean;
+    loading: boolean;
     numberPersos: number;
 }
 
 const initialState: ParamsState = {
     darkMode: false,
+    loading: false,
     numberPersos: 0
 }
 

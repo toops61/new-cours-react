@@ -1,0 +1,27 @@
+.chrono-section {
+    position: relative;
+    background-color: #b1fff3;
+    width: 100%;
+    min-height: 3em;
+    border: solid;
+    margin: 1em 0;
+    padding: 1em;
+    p {
+        font-size: 1.5em;
+    }
+}
+
+.buttons-section {
+    display: flex;
+    align-items: center;
+    button {
+        margin: .5em;
+        background-color: #fff;
+        box-shadow: 2px 2px 8px;
+        width: 8em;
+        height: 2.5em;
+        &:active {
+            box-shadow: 0px 0px 2px;
+        }
+    }
+}
