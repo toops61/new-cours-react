@@ -10,21 +10,43 @@
     p {
         font-size: 1.5em;
     }
+    .alert,.urgent-text {
+        font-size: 1em;
+    }
     h2 {
         margin: 1em 0;
         font-size: 1.5em;
+        @include text-shadow;
+    }
+    h3 {
+        @include text-shadow;
     }
 }
 
 .todo-form {
     display: flex;
     flex-direction: column;
-    input {
+    .text-input {
         width: 50vw;
         padding: .5em;
         color: black;
-        margin: 1em 0 2em;
+        margin: .5em 0;
     }
+    .check-input {
+        width:fit-content;
+        margin: .5em 0 1em;
+    }
+}
+
+.alert {
+    color: #ff2121;
+    background-color: #fff;
+    width: fit-content;
+    padding: .5em;
+    border: solid black;
+    animation: flashing-text 500ms infinite alternate;
+    border-radius: .5em;
+    margin-bottom: .5em;
 }
 
 .add-button {
@@ -50,6 +72,24 @@
     color: black;
     padding: 1em;
     margin: .5em;
-    border: solid .2em black;
+    border: solid .15em black;
     border-radius: .5em;
+    &.urgent {
+        background-color: rgb(215, 6, 6);
+        color: white;
+    }
+    &.done {
+        opacity: .4;
+    }
+    h4 {
+        cursor: pointer;
+    }
+}
+
+.urgent-text {
+    position: absolute;
+    bottom: -.5em;
+    right: 0;
+    animation: flashing-text 1s infinite alternate;
+    @include text-shadow;
 }

@@ -26,3 +26,24 @@
         margin: 0 1vw;
     }
 }
+
+.useref-page {
+    background-color: #079354;
+    color: white;
+    width: 100%;
+    min-height: 3em;
+    border: solid black;
+    margin: 1em 0;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    .objectref {
+        width: 20vw;
+        height: 5em;
+        border: solid black;
+        background-color: #fff;
+        color: black;
+        @include flexCenter;
+        margin: .5em 1vw;
+    }
+}

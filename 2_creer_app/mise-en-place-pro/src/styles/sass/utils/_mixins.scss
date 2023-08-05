@@ -86,8 +86,8 @@
     line-height: 1;
 }
 
-@mixin text-shadow {
-    text-shadow: 2px 2px 1px black;
+@mixin text-shadow ($color:black) {
+    text-shadow: 2px 2px 1px $color;
 }
 
 @mixin adapt-size ($font-size: 4vw) {
