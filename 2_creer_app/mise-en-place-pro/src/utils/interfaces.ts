@@ -41,3 +41,9 @@ export interface chronoFields {
     value: number;
     intervalID: number | null;
 }
+
+export interface taskFields {
+    value?: string;
+    id: string;
+    priority?: string;
+}

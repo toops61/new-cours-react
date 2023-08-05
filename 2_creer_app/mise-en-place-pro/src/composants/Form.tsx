@@ -29,7 +29,7 @@ export default function Form(props:FormProps) {
     }
 
   return (
-    <form onSubmit={submitForm}>
+    <form onSubmit={submitForm} className="first-form">
         <label htmlFor="pseudo">Pseudo</label>
         <input type="text" name="pseudo" id="pseudo" onChange={handleChange} value={input.pseudo} />
         <label htmlFor="persoName">Nom</label>

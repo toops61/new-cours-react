@@ -1,0 +1,55 @@
+.todo-section {
+    position: relative;
+    background-color: #ff7d21;
+    color: white;
+    width: 100%;
+    min-height: 3em;
+    border: solid black;
+    margin: 1em 0;
+    padding: 1em;
+    p {
+        font-size: 1.5em;
+    }
+    h2 {
+        margin: 1em 0;
+        font-size: 1.5em;
+    }
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    input {
+        width: 50vw;
+        padding: .5em;
+        color: black;
+        margin: 1em 0 2em;
+    }
+}
+
+.add-button {
+    width: 8vw;
+    padding: .2em;
+    @include button-shadow;
+    &:active {
+        box-shadow: none;
+    }
+    margin-bottom: 1em;
+}
+
+.todo-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+
+.todo-card {
+    position: relative;
+    width: 25vw;
+    background-color: #fff;
+    color: black;
+    padding: 1em;
+    margin: .5em;
+    border: solid .2em black;
+    border-radius: .5em;
+}

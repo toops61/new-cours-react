@@ -13,6 +13,7 @@ import { NewCard } from "./utils/classes";
 import Users from "./composants/Users";
 import Loader from "./composants/Loader";
 import Chrono from "./composants/Chrono";
+import ToDoList from "./composants/to-do-app/ToDoList";
 
 export default function App() {
   const generalParams = useAppSelector((state : RootState) => state.generalParamsSlice);
@@ -22,6 +23,7 @@ export default function App() {
   const [openFruity, setOpenFruity] = useState<boolean>(false);
   const [openUsers, setOpenUsers] = useState<boolean>(false);
   const [openChrono, setOpenChrono] = useState<boolean>(false);
+  const [openTodo, setOpenTodo] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
 
@@ -59,19 +61,26 @@ export default function App() {
           <button onClick={() => setOpenFruity(!openFruity)} className="open-close">
             {openFruity ? 'close' : 'open'}
           </button>
-          {openFruity ? <Fruity /> : <></>}
+          {openFruity ? <Fruity /> : <h3>Fruity</h3>}
         </section>
         <section className="users-section">
           <button onClick={() => setOpenUsers(!openUsers)} className="open-close">
             {openUsers ? 'close' : 'open'}
           </button>
           <Users openUsers={openUsers} />
+          {!openUsers ? <h3>Users</h3> : <></>}
         </section>
         <section className="chrono-section">
           <button onClick={() => setOpenChrono(!openChrono)} className="open-close">
             {openChrono ? 'close' : 'open'}
           </button>
-          {openChrono ? <Chrono /> : <></>}
+          {openChrono ? <Chrono /> : <h3>Chrono</h3>}
+        </section>
+        <section className="todo-section">
+          <button onClick={() => setOpenTodo(!openTodo)} className="open-close">
+            {openTodo ? 'close' : 'open'}
+          </button>
+          {openTodo ? <ToDoList /> : <h3>Todo liste</h3>}
         </section>
       </div>
     </main>
