@@ -93,3 +93,22 @@
     animation: flashing-text 1s infinite alternate;
     @include text-shadow;
 }
+
+.blackhole {
+    position: absolute;
+    bottom: .5em;
+    right: 1vw;
+    @include button-shadow;
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.blackhole-container {
+    width: 15em;
+    height: 10em;
+    margin-left: 40%;
+    img {
+        @include imageFit;
+    }
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Form from "./composants/Form";
 import Cards from "./composants/Cards";
@@ -26,6 +26,10 @@ export default function App() {
   const [openTodo, setOpenTodo] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
+
+  const fruityRef = useRef<HTMLElement>(null);
+
+  const fruityCurrent = fruityRef.current;
 
   const [persosArray, setPersosArray]: [persoCard[], React.Dispatch<React.SetStateAction<NewCard[]>>] = useState<persoCard[]>([]);
 
@@ -57,7 +61,7 @@ export default function App() {
         <section className="cards-container">
           {persosArray[0]?.pseudo ? persosArray.map((perso : NewCard) => <Cards pseudo={perso.pseudo} persoName={perso.persoName} key={perso.id} />) : <></>}
         </section>
-        <section className="Fruity-section">
+        <section className="fruity-section" ref={fruityRef}>
           <button onClick={() => setOpenFruity(!openFruity)} className="open-close">
             {openFruity ? 'close' : 'open'}
           </button>
@@ -80,7 +84,7 @@ export default function App() {
           <button onClick={() => setOpenTodo(!openTodo)} className="open-close">
             {openTodo ? 'close' : 'open'}
           </button>
-          {openTodo ? <ToDoList /> : <h3>Todo liste</h3>}
+          {openTodo ? <ToDoList fruityRef={fruityCurrent} /> : <h3>Todo liste</h3>}
         </section>
       </div>
     </main>
