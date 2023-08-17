@@ -47,3 +47,28 @@ export interface taskFields {
     id: string;
     priority?: string;
 }
+
+export interface shadowFields {
+    [key:string]:string|boolean|number|undefined;
+    active: boolean;
+    inset: boolean;
+    horizontal_offset: number;
+    vertical_offset: number;
+    blur_radius: number;
+    spread_radius: number;
+    color: string;
+    id:string;
+}
+
+interface boxParamsFields {
+    [key:string]:string|boolean|number|undefined;
+    border_radius: number;
+    height: number;
+    width: number;
+    background_color: string;
+}
+
+export interface boxFields {
+    shadows: shadowFields[];
+    box_params: boxParamsFields; 
+}

@@ -23,3 +23,17 @@ export class NewFruit {
         public id: string
     ) {}
 }
+
+//Boxy
+export class NewShadow {
+    constructor (
+        public active: boolean,
+        public inset: boolean,
+        public horizontal_offset: number,
+        public vertical_offset: number,
+        public blur_radius: number,
+        public spread_radius: number,
+        public color: string,
+        public id: string
+    ) {}
+}

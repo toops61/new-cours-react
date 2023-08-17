@@ -14,6 +14,7 @@ import Users from "./composants/Users";
 import Loader from "./composants/Loader";
 import Chrono from "./composants/Chrono";
 import ToDoList from "./composants/to-do-app/ToDoList";
+import Boxy from "./composants/Boxy-generator/Boxy";
 
 export default function App() {
   const generalParams = useAppSelector((state : RootState) => state.generalParamsSlice);
@@ -24,6 +25,7 @@ export default function App() {
   const [openUsers, setOpenUsers] = useState<boolean>(false);
   const [openChrono, setOpenChrono] = useState<boolean>(false);
   const [openTodo, setOpenTodo] = useState<boolean>(false);
+  const [openBoxy, setOpenBoxy] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
 
@@ -85,6 +87,12 @@ export default function App() {
             {openTodo ? 'close' : 'open'}
           </button>
           {openTodo ? <ToDoList fruityRef={fruityCurrent} /> : <h3>Todo liste</h3>}
+        </section>
+        <section className="boxy-section">
+          <button onClick={() => setOpenBoxy(!openBoxy)} className="open-close">
+            {openBoxy ? 'close' : 'open'}
+          </button>
+          {openBoxy ? <Boxy /> : <h3>Boxy app</h3>}
         </section>
       </div>
     </main>

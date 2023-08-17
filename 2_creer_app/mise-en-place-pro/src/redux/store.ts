@@ -5,6 +5,7 @@ import fruitsSlice from "./fruitsSlice";
 import cartSlice from "./cartSlice";
 import usersSlice from "./usersSlice";
 import chronoSlice from "./chronoSlice";
+import boxySlice from "./boxySlice";
 //import logger from "redux-logger";
 
 const store = configureStore({
@@ -14,7 +15,8 @@ const store = configureStore({
         fruitsSlice,
         cartSlice,
         usersSlice,
-        chronoSlice
+        chronoSlice,
+        boxySlice
     }/* ,
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware()
