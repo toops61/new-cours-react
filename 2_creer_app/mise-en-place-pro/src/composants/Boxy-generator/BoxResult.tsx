@@ -1,26 +1,16 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../redux/hooks"
+import { shadowsToString } from "../../utils/utilsFuncs";
 
 export default function BoxResult() {
     const boxParamsState = useAppSelector(state => state.boxySlice);
     const [shadowsString, setShadowsString] = useState('none');
 
     useEffect(() => {
-        
-        let tempString = '';
-        if (boxParamsState?.shadows?.length && boxParamsState?.shadows?.some(e => e.active)) {
-            boxParamsState.shadows.map(shadow => {
-                tempString += (shadow.active ? `${shadow.inset ? 'inset ' : ''}${shadow.horizontal_offset}px ${shadow.vertical_offset}px ${shadow.blur_radius}px ${shadow.spread_radius}px ${shadow.color},` : '');
-                return shadow;
-            })
-        } else {
-            tempString = 'none';
-        }
-        if (tempString.charAt(tempString.length-1) === ',') (tempString = tempString.slice(0,-1));
+        const tempString = shadowsToString(boxParamsState);
         setShadowsString(tempString);
     }, [boxParamsState.shadows])
     
-
   return (
     <div className="box-result"
         style={{ 

@@ -5,6 +5,7 @@ import { useAppSelector } from "../../redux/hooks";
 import { updateBoxy } from "../../redux/boxySlice";
 import { v4 as uuidv4 } from "uuid";
 import { NewShadow } from "../../utils/classes";
+import { shadowsToString } from "../../utils/utilsFuncs";
 
 export default function BoxyParams() {
     const objectParams = useAppSelector(state => state.boxySlice);
@@ -54,7 +55,8 @@ export default function BoxyParams() {
     }
 
     const copyPath = () => {
-        navigator.clipboard.writeText('truc');
+        const tempShadowString = shadowsToString(objectParams);
+        navigator.clipboard.writeText(`box-shadow:${tempShadowString}`);
     }
 
     useEffect(() => {
