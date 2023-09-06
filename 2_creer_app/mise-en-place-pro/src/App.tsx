@@ -15,6 +15,7 @@ import Loader from "./composants/Loader";
 import Chrono from "./composants/Chrono";
 import ToDoList from "./composants/to-do-app/ToDoList";
 import Boxy from "./composants/Boxy-generator/Boxy";
+import TestRefForward from "./composants/testForwardRefs/TestRefForward";
 
 export default function App() {
   const generalParams = useAppSelector((state : RootState) => state.generalParamsSlice);
@@ -22,10 +23,11 @@ export default function App() {
   const usersLoader = useAppSelector((state : RootState) => state.usersSlice.loading);
 
   const [openFruity, setOpenFruity] = useState<boolean>(false);
-  const [openUsers, setOpenUsers] = useState<boolean>(false);
-  const [openChrono, setOpenChrono] = useState<boolean>(false);
-  const [openTodo, setOpenTodo] = useState<boolean>(false);
-  const [openBoxy, setOpenBoxy] = useState<boolean>(false);
+  const [openUsers, setOpenUsers] = useState(false);
+  const [openChrono, setOpenChrono] = useState(false);
+  const [openTodo, setOpenTodo] = useState(false);
+  const [openBoxy, setOpenBoxy] = useState(false);
+  const [openTestRef, setOpenTestRef] = useState(false);
 
   const dispatch = useAppDispatch();
 
@@ -93,6 +95,12 @@ export default function App() {
             {openBoxy ? 'close' : 'open'}
           </button>
           {openBoxy ? <Boxy /> : <h3>Boxy app</h3>}
+        </section>
+        <section className="testref-section">
+          <button onClick={() => setOpenTestRef(!openTestRef)} className="open-close">
+            {openTestRef ? 'close' : 'open'}
+          </button>
+          {openTestRef ? <TestRefForward /> : <h3>Test forwardRef app</h3>}
         </section>
       </div>
     </main>
