@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import { boxFields, shadowFields } from "../../utils/interfaces";
 import { useAppSelector } from "../../redux/hooks";
 import { updateBoxy } from "../../redux/boxySlice";
-import { v4 as uuidv4 } from "uuid";
 import { NewShadow } from "../../utils/classes";
 import { shadowsToString } from "../../utils/utilsFuncs";
+import { nanoid } from "@reduxjs/toolkit";
 
 export default function BoxyParams() {
     const objectParams = useAppSelector(state => state.boxySlice);
@@ -33,7 +33,7 @@ export default function BoxyParams() {
     }
 
     const addShadow = () => {
-        const newOne = {...new NewShadow(true,false,4,4,8,0,'#000000',uuidv4())};
+        const newOne = {...new NewShadow(true,false,4,4,8,0,'#000000',nanoid())};
         const tempArray = shadowsArray.map(shadow => ({...shadow}));
         tempArray.push(newOne);
         setShadowsArray(tempArray);

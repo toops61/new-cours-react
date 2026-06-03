@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 import Form from "./composants/Form";
 import Cards from "./composants/Cards";
-import { v4 as uuidv4 } from "uuid";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { RootState } from "./redux/store";
 import { updateGeneralParams } from "./redux/generalParamsSlice";
@@ -16,6 +15,7 @@ import Chrono from "./composants/Chrono";
 import ToDoList from "./composants/to-do-app/ToDoList";
 import Boxy from "./composants/Boxy-generator/Boxy";
 import TestRefForward from "./composants/testForwardRefs/TestRefForward";
+import { nanoid } from "@reduxjs/toolkit";
 
 export default function App() {
   const generalParams = useAppSelector((state : RootState) => state.generalParamsSlice);
@@ -45,7 +45,7 @@ export default function App() {
       tempObject.id = persosArray[previousInd].id;
       newArray.splice(previousInd,1,tempObject);
     } else {
-      tempObject.id = uuidv4();
+      tempObject.id = nanoid();
       newArray.push(tempObject);
       dispatch(updateGeneralParams({numberPersos:generalParams.numberPersos+1}));
     }

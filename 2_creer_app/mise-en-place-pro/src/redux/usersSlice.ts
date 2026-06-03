@@ -1,7 +1,6 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice, nanoid } from "@reduxjs/toolkit";
 import { fetchFields, usersFields } from "../utils/interfaces";
 import { AppDispatch } from "./store";
-import { v4 as uuidv4 } from "uuid";
 
 const initialState: fetchFields = {
     loading: false,
@@ -14,7 +13,7 @@ const usersSlice = createSlice({
     initialState,
     reducers: {
         addData: (state,action: PayloadAction<usersFields[]>) => {
-            state.data = action.payload.map(user => {return{...user,id:uuidv4()}});
+            state.data = action.payload.map(user => {return{...user,id:nanoid()}});
             state.loading = false;
             return state;
         },
